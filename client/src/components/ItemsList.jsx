@@ -1,12 +1,28 @@
+import { useNavigate } from 'react-router-dom';
+
 const ItemsList = () => {
+	const navigate = useNavigate();
+
+	const handleLogin = () => {
+		navigate('/login');
+	}
+
+	const handleRegistration = () => {
+		navigate('/registrations');
+	};
+
 	return (
 		<div className='items__container'>
 			<div className='items__header'>
-				<button>ホーム</button>
-				<button>検索</button>
+				<button className='items__btn' onClick={handleLogin}>
+					戻る
+				</button>
+				<input className='items__serach' placeholder='商品名を入力してください'></input>
 			</div>
 			<div className='items__add'>
-				<button >新しいアイテムを追加</button>
+				<button className='items__btn' onClick={handleRegistration}>
+					新しいアイテムを追加
+				</button>
 			</div>
 			<div className='items__list'>
 				<div className='item'>
@@ -28,6 +44,22 @@ const ItemsList = () => {
 				<div className='item'>
 					<img className='item__img' src='./src/assets/sentaku.png' alt='防災食' />
 					<p className='item__name'>洗濯機</p>
+				</div>
+				<div className='item'>
+					<img className='item__img' src='./src/assets/soujiki.png' alt='防災食' />
+					<p className='item__name'>掃除機</p>
+				</div>
+				<div className='item'>
+					<img className='item__img' src='./src/assets/soujiki.png' alt='防災食' />
+					<p className='item__name'>掃除機</p>
+				</div>
+				<div className='item'>
+					<img className='item__img' src='./src/assets/soujiki.png' alt='防災食' />
+					<p className='item__name'>掃除機</p>
+				</div>
+				<div className='item'>
+					<img className='item__img' src='./src/assets/soujiki.png' alt='防災食' />
+					<p className='item__name'>掃除機</p>
 				</div>
 				<div className='item'>
 					<img className='item__img' src='./src/assets/soujiki.png' alt='防災食' />

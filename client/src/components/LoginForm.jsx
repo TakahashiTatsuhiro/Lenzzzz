@@ -6,7 +6,7 @@ const LoginForm = () => {
 	const [user_name, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
-    const { login, setUserId, setUserName } = useAuth();
+	const { login, setUserId, setUserName } = useAuth();
 
 	const handleSubmit = async () => {
 		try {
@@ -19,9 +19,9 @@ const LoginForm = () => {
 			});
 			if (response.ok) {
 				const data = await response.json();
-                setUserId(data[0].id);
-                setUserName(user_name);
-                login();
+				setUserId(data[0].id);
+				setUserName(user_name);
+				login();
 				navigate('/items'); // ここでItemsListコンポーネントへ遷移
 			}
 		} catch (error) {
@@ -29,11 +29,11 @@ const LoginForm = () => {
 		}
 	};
 
-    const handleSubmitTest = async () => {
+	const handleSubmitTest = async () => {
 		try {
-            setUserId(1);
-            setUserName(user_name);
-            login(); // ログイン状態を更新
+			setUserId(1);
+			setUserName(user_name);
+			login(); // ログイン状態を更新
 			navigate('/items'); // ここでItemsListコンポーネントへ遷移
 		} catch (error) {
 			console.log(error);
@@ -42,21 +42,26 @@ const LoginForm = () => {
 
 	return (
 		<div className='login__container'>
+			<div className='login__header'></div>
 			<div className='login__box'>
-				<h1>Lenzzzz へようこそ</h1>
-				<p>ユーザー名</p>
+				<h1 className='login__title'>Lenzzzz へようこそ</h1>
+				<p className='login__input-title'>ユーザー名</p>
 				<input
+					className='login__input'
 					type='text'
 					placeholder='ユーザー名を入力'
 					onChange={(e) => setUsername(e.target.value)}
 				/>
-				<p>パスワード</p>
+				<p className='login__input-title'>パスワード</p>
 				<input
+					className='login__input'
 					type='password'
 					placeholder='パスワードを入力'
 					onChange={(e) => setPassword(e.target.value)}
 				/>
-				<button onClick={handleSubmit}>ログイン</button>
+				<button className='login__btn' onClick={handleSubmitTest}>
+					ログイン
+				</button>
 			</div>
 		</div>
 	);

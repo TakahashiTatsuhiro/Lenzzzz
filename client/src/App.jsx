@@ -5,6 +5,7 @@ import LoginForm from './components/LoginForm';
 import ItemsList from './components/ItemsList';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import Registrations from './components/Registrations';
 
 function App() {
 	return (
@@ -18,6 +19,15 @@ function App() {
 						element={
 							<ProtectedRoute>
 								<ItemsList />
+							</ProtectedRoute>
+						}
+					/>
+					<Route
+						exact
+						path='/registrations'
+						element={
+							<ProtectedRoute>
+								<Registrations />
 							</ProtectedRoute>
 						}
 					/>
