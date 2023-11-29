@@ -59,7 +59,7 @@ const LoginForm = () => {
 					placeholder='パスワードを入力'
 					onChange={(e) => setPassword(e.target.value)}
 				/>
-				<button className='login__btn' onClick={handleSubmitTest}>
+				<button className='login__btn' onClick={handleSubmit}>
 					ログイン
 				</button>
 			</div>
