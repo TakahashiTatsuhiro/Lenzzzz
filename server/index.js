@@ -44,6 +44,8 @@ const registrationFunc = async (req, res) => {
 
 const loginFunc = async (req, res) => {
   const { user_name, password } = req.body;
+  // console.log("req::::::", req)
+  console.log('bodyより受信',user_name, password);
   const loginId = await userInfo.getByUserPass(user_name, password);
   if (!loginId) {
     res.status(400).send("NG");

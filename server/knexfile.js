@@ -1,7 +1,7 @@
 // Update with your config settings.
 // require("dotenv").config();
 require("dotenv").config({
-  path: "../.env",
+  path: "./.env",
 });
 /**
  * @type { Object.<string, import("knex").Knex.Config> }

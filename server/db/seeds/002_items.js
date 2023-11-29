@@ -8,7 +8,7 @@ exports.seed = async function (knex) {
   await knex("items").insert([
     {
       user_id: 1,
-      parchase_date: "2015-05-05",
+      purchase_date: "2015-05-05",
       warranty_number: 2,
       warranty_unit: "year",
       product_name: "メガネ",
@@ -18,7 +18,7 @@ exports.seed = async function (knex) {
     },
     {
       user_id: 1,
-      parchase_date: "2015-06-05",
+      purchase_date: "2015-06-05",
       warranty_number: 1,
       warranty_unit: "year",
       product_name: "子供用メガネ",
@@ -28,7 +28,7 @@ exports.seed = async function (knex) {
     },
     {
       user_id: 1,
-      parchase_date: "2015-07-05",
+      purchase_date: "2015-07-05",
       warranty_number: 6,
       warranty_unit: "month",
       product_name: "交換レンズ",

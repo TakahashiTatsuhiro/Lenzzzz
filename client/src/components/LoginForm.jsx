@@ -9,16 +9,18 @@ const LoginForm = () => {
 	const { login, setUserId, setUserName } = useAuth();
 
 	const handleSubmit = async () => {
+		console.log('送信時',user_name, password);
+		console.log('json', JSON.stringify({ user_name: user_name, password:password }));
 		try {
-			const response = await fetch('/login', {
+			const response = await fetch('http://localhost:3000/login', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({ username: user_name, password }),
+				body: JSON.stringify({ user_name: user_name, password:password }),
 			});
+			const data = await response.json();
 			if (response.ok) {
-				const data = await response.json();
 				setUserId(data[0].id);
 				setUserName(user_name);
 				login();
